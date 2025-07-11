@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NUTRISCAN - Food Safety Scanner</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navigation Header -->
+    <div class="header">
+        <div class="logo">
+            <img src="logos/nutriscan_logo.png" alt="NutriScan Logo" class="logo-img">
+            <span class="logo-text">NUTRISCAN</span>
+        </div>
+        <nav class="nav-menu">
+            <a href="#hero" class="nav-link">Home</a>
+            <a href="#scanner" class="nav-link">Scanner</a>
+            <a href="#initiatives" class="nav-link">Initiatives</a>
+            <a href="#reports" class="nav-link">Reports</a>
+            <a href="#contact" class="nav-link">Contact</a>
+        </nav>
+        <label for="uploadInput" class="camera-icon">📸</label>
+        <input type="file" id="uploadInput" accept="image/*">
+    </div>
+
+    <!-- Main Container -->
+    <div class="main-container">
+        <!-- Hero Section -->
+        <section id="hero" class="hero-section">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1>Empowering communities through technology</h1>
+                    <p>We empower communities, businesses, and institutions to make informed decisions about food safety through advanced AI-powered scanning technology.</p>
+                </div>
+                <div class="hero-image">
+                    <img src="images/front.png" alt="NutriScan Innovation" class="hero-bg">
+                </div>
+            </div>
+        </section>
+
+        <!-- Scanner Section -->
+        <section id="scanner" class="scanner-section">
+            <div class="scanner-content">
+                <div class="scanner-visual">
+                    <div class="food-icons">
+                        <!-- Decorative food icons -->
+                        <span class="food-icon">🍎</span>
+                        <span class="food-icon">🥕</span>
+                        <span class="food-icon">🍌</span>
+                        <span class="food-icon">🥬</span>
+                        <span class="food-icon">🍇</span>
+                        <span class="food-icon">🥒</span>
+                        <span class="food-icon">🍊</span>
+                        <span class="food-icon">🥦</span>
+                    </div>
+                </div>
+                
+                <div class="scanner-info">
+                    <h2>Scan for nutrition</h2>
+                    <p>Click the camera icon to select an image and find results.</p>
+                    <button class="scan-button" onclick="document.getElementById('uploadInput').click()">
+                        📸 Start Scanning
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Modal Backdrop -->
+            <div class="modal-backdrop" id="modalBackdrop" style="display:none;"></div>
+            
+            <!-- Scan Results -->
+            <div class="scan-result" id="scanResult" style="display:none;">
+                <h2>Scan Results</h2>
+                <div class="scan-container">
+                    <div class="uploaded-image-container">
+                        <img id="uploadedImage" alt="Uploaded food item">
+                    </div>
+                    <div id="resultContent" class="result-content"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Test Session Section -->
+        <section id="test-session" class="test-session-section">
+            <div class="test-session-content">
+                <h2>Try Our Scanner</h2>
+                <p>Test the scanner functionality by dragging sample images to the camera icon below</p>
+                
+                <div class="scanner-dragdrop-layout">
+                    <!-- Drop Area (Camera Icon) -->
+                    <div class="drop-area" id="dropArea">
+                        <div class="camera-icon-large" id="cameraIcon">
+                            📸
+                            <div class="drop-text">Drag image here to scan</div>
+                        </div>
+                    </div>
+                    <!-- Sample Images to Drag -->
+                    <div class="sample-drag-images" id="sampleDragImages">
+                        <h3>Sample Images</h3>
+                        <div class="sample-drag-list">
+                            <img src="images/fresh_fruit.jpg" alt="Fresh fruit sample" class="draggable-sample" draggable="true" data-type="fresh">
+                            <img src="images/rotten_fruit.jpg" alt="Rotten fruit sample" class="draggable-sample" draggable="true" data-type="rotten">
+                        </div>
+                        <div class="drag-instruction">
+                            <p>Drag a sample image to the camera icon to scan</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Initiatives Section -->
+        <section id="initiatives" class="initiatives-section">
+            <h2>Initiatives</h2>
+            <div class="initiatives-grid">
+                <div class="initiative-card">
+                    <div class="card-image">
+                        <img src="images/salad1.jpg" alt="Education Initiative">
+                    </div>
+                    <h3>Education</h3>
+                    <p>Spread awareness through teaching communities about food safety, proper storage and providing evidence-based guidelines.</p>
+                    <button class="card-button">Access expert report</button>
+                </div>
+                <div class="initiative-card">
+                    <div class="card-image">
+                        <img src="images/salad2.jpg " alt="Disaster Relief">
+                    </div>
+                    <h3>Disaster relief</h3>
+                    <p>In times of crisis, ensuring safe food distribution to communities affected by recent disasters like the</p>
+                    <button class="card-button">Access expert report</button>
+                </div>
+                <div class="initiative-card">
+                    <div class="card-image">
+                        <img src="images/salad3.jpg" alt="Health and Wellness">
+                    </div>
+                    <h3>Health and wellness</h3>
+                    <p>Support nutritional and physical wellness initiatives through partnerships with local organizations focused on</p>
+                    <button class="card-button">Access expert report</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Organic Produce Section -->
+        <section id="organic" class="organic-section">
+            <div class="organic-content">
+                <div class="organic-text">
+                    <h2>Organic Produce</h2>
+                    <p>The impact of our initiatives inspires us as they come to life through the people we serve. As we champion the cause of food safety, we aim to reach more individuals and communities with hope and resilience and opportunity for a bright future.</p>
+                </div>
+                <div class="organic-chart">
+                    <div class="chart-container">
+                        <div class="chart-bar bar1" style="height: 60%;"></div>
+                        <div class="chart-bar bar2" style="height: 85%;"></div>
+                        <div class="chart-bar bar3" style="height: 45%;"></div>
+                        <div class="chart-bar bar4" style="height: 75%;"></div>
+                        <div class="chart-bar bar5" style="height: 90%;"></div>
+                        <div class="chart-bar bar6" style="height: 55%;"></div>
+                        <div class="chart-bar bar7" style="height: 70%;"></div>
+                        <div class="chart-bar bar8" style="height: 40%;"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Reports Section -->
+        <section id="reports" class="reports-section">
+            <h2>Impact metrics and reports</h2>
+            <p>We value transparency, accountability, and communication with our stakeholders. In this effort to make the best we can be for our community.</p>
+            
+            <div class="reports-grid">
+                <div class="report-card">
+                    <div class="report-icon">📊</div>
+                    <h3>Annual report</h3>
+                    <p>Review of our initiatives, outcomes, goals and financial performance over the past year.</p>
+                    <button class="report-button">Access our annual report</button>
+                </div>
+                <div class="report-card">
+                    <div class="report-icon">📈</div>
+                    <h3>Statistical report</h3>
+                    <p>Key metrics on food safety scans performed, food storage and food accuracy indicators.</p>
+                    <button class="report-button">Access our statistical report</button>
+                </div>
+                <div class="report-card">
+                    <div class="report-icon">👁️</div>
+                    <h3>Visuals</h3>
+                    <p>Review of key graphs and key metrics that illustrate the progress of our job.</p>
+                    <button class="report-button">Access our visual report</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="contact-section">
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h2>Contact us</h2>
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <h3>Phone</h3>
+                            <p>+91 901 2800</p>
+                        </div>
+                        <div class="contact-item">
+                            <h3>Email</h3>
+                            <p>hello@nutriscan.com</p>
+                        </div>
+                        <div class="contact-item">
+                            <h3>Address</h3>
+                            <p>123 Anywhere St., Any City, ST 12345</p>
+                        </div>
+                        <div class="contact-item">
+                            <h3>Social</h3>
+                            <p>@NutriScan</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-images">
+                    <div class="contact-gallery">
+                        <img src="images/strawberries .jpg" alt="Fresh produce scanning">
+                        <img src="images/blueberries.jpg" alt="Quality assessment">
+                        <img src="images/peaches.jpg" alt="Food safety education">
+                        <img src="images/lemons.jpg" alt="Community outreach">
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
